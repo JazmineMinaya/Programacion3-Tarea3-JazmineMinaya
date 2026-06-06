@@ -1,10 +1,10 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
     static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-
     }
 
     public static void mostrarMenu() {
@@ -43,22 +43,26 @@ public class Main {
     public static void regitrarUsuario() {
         System.out.println("\nREGISTRAR USUARIO:\n");
 
-        System.out.print("Ingrese su nombre: ");
-        String nombre = scanner.nextLine();
-
-        System.out.print("Ingrese su edad: ");
-        int edad = scanner.nextInt();
-        scanner.nextLine();
-
-        System.out.print("Ingrese su correo: ");
-        String correo = scanner.nextLine();
-
-        System.out.print("Ingrese su salario: ");
-        double salario = scanner.nextDouble();
-
         try {
+            System.out.print("Ingrese su nombre: ");
+            String nombre = scanner.nextLine();
+
+            System.out.print("Ingrese su edad: ");
+            int edad = scanner.nextInt();
+            scanner.nextLine();
+
+            System.out.print("Ingrese su correo: ");
+            String correo = scanner.nextLine();
+
+            System.out.print("Ingrese su salario: ");
+            double salario = scanner.nextDouble();
+
             validarUsuario(nombre, edad, correo, salario);
             System.out.println("\nUsuario registrado correctamente");
+        }
+        catch (InputMismatchException e) {
+            System.out.println("\nError: Debe ingresar un número válido");
+            scanner.nextLine();
         }
         catch (NombreInvalidoException e) {
             System.out.println("\nError: " + e.getMessage());
