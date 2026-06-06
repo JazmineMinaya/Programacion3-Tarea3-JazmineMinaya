@@ -73,7 +73,7 @@ public class Main {
             System.out.println("\nError: " + e.getMessage());
         }
         finally {
-            System.out.println("\nProceso finalizado");
+            System.out.println("Proceso finalizado");
         }
     }
 }
