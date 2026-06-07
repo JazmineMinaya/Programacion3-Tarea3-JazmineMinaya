@@ -5,6 +5,28 @@ public class Main {
     static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
+        int opcion = 0;
+        
+        do {
+            mostrarMenu();
+            System.out.print("\nIngrese la opción de su preferencia: ");
+            opcion = scanner.nextInt();
+            scanner.nextLine();
+            
+            switch (opcion) { 
+                case 1: 
+                    regitrarUsuario(); 
+                    break;
+                
+                case 2: 
+                    System.out.println("\nSaliendo del sistema...");
+                    break; 
+                
+                default: 
+                    System.out.println("\nOpción inválida");
+                    break;
+            } 
+        } while (opcion != 2);
     }
 
     public static void mostrarMenu() {
