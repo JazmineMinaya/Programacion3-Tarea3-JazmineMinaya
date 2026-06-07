@@ -54,7 +54,7 @@ public class Main {
         }
 
         if (!correo.contains("@") || !correo.contains(".")) {
-            throw new CorreoInvalidoException("El correo debe contener '@' y '.'");
+            throw new CorreoInvalidoException("El correo electrónico no es válido");
         }
 
         if (salario <= 0) {
